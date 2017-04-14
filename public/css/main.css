@@ -1,0 +1,13 @@
+.login-modal{
+  position: absolute;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 75%;
+  left: 50vw;
+  top: 50vh;
+  transform: translate(-50%,-50%);
+}
+
+.red{
+  border-color: red;
+}
