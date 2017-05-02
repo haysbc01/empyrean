@@ -6,12 +6,12 @@ angular.module('design')
 
   function authFactory($http){
 
-    function register(email,password){
-      // console.log(email, password)
+    function register(name,email,password){
       return $http({
         method: 'POST',
         url: '/register',
         data: {
+          name:name,
           email:email,
           password:password
         }
@@ -29,8 +29,33 @@ angular.module('design')
       })
     }
 
+    function season(season){
+      return $http({
+        method: 'POST',
+        url: '/season',
+        data: {
+          season:season
+        }
+      })
+    }
+
+    function questions(season,style,flowers,colors){
+      return $http({
+        method: 'POST',
+        url: '/questions',
+        data: {
+          season: season,
+          style: style,
+          flowers: flowers,
+          colors: colors
+        }
+      })
+    }
+
     return{
       register: register,
-      login: login
+      login: login,
+      season: season,
+      questions: questions
     }
   }

@@ -8,25 +8,32 @@ var express         = require('express'),
     fs              = require('fs'),
     cors            = require('cors'),
     clientSessions  = require('client-sessions'),
-    authShit        = require('./controllers/auth'),
-    // routes          = require('./routes')
-    PORT            = 4000,
+    // authShit        = require('./controllers/auth'),
+    routes          = require('./routes')
+    PORT            = process.env.PORT || 80,
     app             = express();
+mongoose.Promise = global.Promise;
+mongoose.connect('mongodb://localhost/empyrean');
 
-mongoose.connect('mongodb://localhost/empyrean')
+var sessionsMiddleware = clientSessions({
+    cookieName: 'auth-cookie',
+    secret: 'DESIGNAPP',
+    requestKey: 'session',
+    duration: (86400*1000)*7,
+    cookie: {
+      ephemeral: false,
+      httpOnly: true,
+      secure: false
+    }
+})
 
 app.use(
+  (sessionsMiddleware),
   express.static('public'),
   bodyParser.json()
 );
 
-app.get('/', (req, res)=>{
-  res.sendFile('index.html', {root : './public/html'});
-});
-
-app.post('/register', authShit.registerUser);
-
-// routes(app);
+routes(app);
 
 app.listen(PORT, ()=>{
   console.log(`The server is up and running on port ${PORT}`.america)
