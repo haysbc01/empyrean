@@ -5,6 +5,8 @@
 <h3>Wedding Style</h3>
 <h5>{{dash.data.questions[0].style}}</h5>
 <h3>Wedding Flowers</h3>
-<h5>{{dash.data.questions[0].flowers}}</h5>
+<!-- <h5>{{dash.data.questions[0].flowers}}</h5> -->
+<h5 ng-repeat='flowers in dash.data.questions[0].flowers'>{{flowers}}</h5>
 <h3>Wedding Colors</h3>
-<h5>{{dash.data.questions[0].colors}}</h5>
+<!-- <h5>{{dash.data.questions[0].colors}}</h5> -->
+<h5 ng-repeat='colors in dash.data.questions[0].colors'>{{colors}}</h5>

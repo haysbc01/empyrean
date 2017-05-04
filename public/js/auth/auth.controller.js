@@ -98,24 +98,20 @@ auth.flower = function(){
 
 auth.color = function(){
   console.log(auth.color1, auth.color2,auth.color3)
+
   auth.whichColors.push(auth.color1, auth.color2,auth.color3)
-  console.log(auth.whichColors)
+  for(var i=0;i<auth.whichColors.length;i++){
+    console.log(auth.whichColors[i], typeof(auth.whichColors[i]))
+    if(auth.whichColors[i] == undefined){
+      auth.whichColors.splice(i,1)
+    }
+  }
+  console.log(auth.whichColors);
 
   authFactory
     .questions(auth.whichSeason, auth.whichStyle, auth.whichFlowers, auth.whichColors)
     .then(location.href = '/#!/dashboard');
 }
-
-
-// .then(auth.login.success, auth.login.error);
-// }
-// auth.login.success = function(res){
-// location.href = '/#!/dashboard';
-// }
-//
-// auth.login.error = function(err){
-// auth.loginError = err.data;
-// }
 
 
 
