@@ -13,7 +13,15 @@ function dashFactory($http){
     })
   }
 
+  function getDesigns(){
+    return $http({
+      method: 'GET',
+      url: 'designs'
+    })
+  }
+
 return {
-  getMe:getMe
+  getMe:getMe,
+  getDesigns:getDesigns
 };
 }

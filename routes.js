@@ -1,4 +1,5 @@
 var authShit = require('./controllers/auth'),
+    dashShit = require('./controllers/dash')
     user = require('./models/auth.schema.js');
 
 module.exports = (app) => {
@@ -16,4 +17,5 @@ module.exports = (app) => {
   app.get('/me',authShit.me);
   app.post('/season', authShit.season);
   app.post('/questions', authShit.questions);
+  app.get('/designs', dashShit.getDesigns);
 }

@@ -10,3 +10,15 @@
 <h3>Wedding Colors</h3>
 <!-- <h5>{{dash.data.questions[0].colors}}</h5> -->
 <h5 ng-repeat='colors in dash.data.questions[0].colors'>{{colors}}</h5>
+
+<!--<h1>{{dash.designs}}</h1>-->
+<div ng-repeat='designs in dash.designs | filter:dash.data.questions[0].season' >
+<!--<h1>{{designs.image}}</h1>-->
+<img src="{{designs.image}}" alt="" class="designImages">
+</div>
+
+<input type="text" ng-model="dash.search">
+<div ng-repeat='designs in dash.designs | filter:dash.search' >
+<!--<h1>{{designs.image}}</h1>-->
+<img src="{{designs.image}}" alt="" class="designImages">{{designs.season}},{{designs.style}}
+</div>

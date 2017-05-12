@@ -16,5 +16,16 @@ angular.module('design')
           console.log(dash.data)
         })
     }
-    dash.load()
+
+    dash.designs = function(){
+      dashFactory
+        .getDesigns()
+        .then(function(responseData){
+          dash.designs = responseData.data;
+          console.log(dash.designs)
+        })
+    }
+    dash.load();
+    dash.designs();
   }
+
