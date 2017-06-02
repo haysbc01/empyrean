@@ -1,3 +1,230 @@
-<!-- <button type="button" name="button" ng-click='auth.loginModal =! auth.loginModal'>login</button> -->
-<!-- <button type="button" name="button" ng-click='auth.signUp =! auth.signUp'>sign up</button> -->
-<a href="#!/auth"><button type="button" name="button">login</button></a>
+
+
+    <div class="header">
+    <h1>Design</h1>
+    <h1>Styles</h1>
+    </div>
+    <h4>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</h4>
+    
+<div class="center">
+    <button type="button" name="button" ng-click='auth.loginModal =! auth.loginModal; background =! background' class='login'>login</button> 
+    <br>
+    <button type="button" name="button" ng-click='auth.signUp =! auth.signUp; background =! background' class='login'>sign up</button> 
+    <!--<a href="#!/auth"><button type="button" name="button">login</button></a>-->
+</div>
+<div class='background' ng-show='background'></div>
+
+    <form class="login-modal" ng-show='auth.loginModal'>
+    <h1 class='cursor pull-right' ng-click='auth.loginModal =! auth.loginModal; background =! background'>X</h1>
+    <h1 class='form-title'>Login</h1>
+
+
+    <div class="form-group">
+        <label for="Email">Email address</label>
+        <input type="email" class="form-control" id="Email" placeholder="Email" ng-model='auth.email'>
+    </div>
+
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type='password' class="form-control" id="password" placeholder="Password" ng-model='auth.password'>
+    </div>
+
+    <div class="form-group"> 
+    <button type="submit" class="btn btn-default" ng-click='auth.login()'>Submit</button>
+    <h3>{{auth.loginError}}</h3>
+    </div>
+    <h4 ng-click='auth.signUp =! auth.signUp' class='exitCursor signup'>Signup for a Free Account</h4>
+    </form>
+
+
+
+
+<!-- User Sign Up -->
+
+<form class="login-modal" ng-show='auth.signUp'>
+  <h1 class='cursor pull-right' ng-click='auth.signUp =! auth.signUp; background =! background'>X</h1>
+  <h1 class='form-title'>Register</h1>
+  <div class="form-group">
+
+<div class="form-group">
+  <label for="Name">First Name?</label>
+  <input type="text" placeholder="First Name" ng-model='auth.firstName' class="form-control" required>
+</div>
+
+ <div class="form-group">
+   <label for="Email">Email address</label>
+   <input ng-class='{red: auth.emailField === true}' type="email" class="form-control" placeholder="Email" ng-model='auth.registerEmail' required>
+ </div>
+
+ <div class="form-group">
+   <label for="password">Password</label>
+   <input ng-class='{red: auth.noPassMatch === true}' type='password' class="form-control" placeholder="Password" ng-model='auth.registerPassword' required>
+ </div>
+
+ <div class="form-group">
+   <label for="password">Confirm Password</label>
+   <input ng-class='{red: auth.noPassMatch === true}' type='password' class="form-control" placeholder="Confirm Password" ng-model='auth.confirmPassword' required>
+ </div>
+
+ <button type="submit" class="btn btn-default" ng-click='auth.register()'>Submit</button>
+ <h3>{{auth.tryAgain}}</h3>
+ </div>
+</form>
+
+
+<!-- User Questions -->
+
+<!-- Season -->
+
+<form class="login-modal" ng-show='auth.question1'>
+  <h1 class='form-title'>User Questions</h1>
+  <div class="form-group">
+
+<div class="form-group">
+  <label for="Name">Season your wedding will be held?</label><br>
+  <input type="radio" name="season" value="spring" ng-model='auth.whichSeason'>Spring
+  <input type="radio" name="season" value="summer" ng-model='auth.whichSeason'>Summer
+  <input type="radio" name="season" value="fall" ng-model='auth.whichSeason'>Fall
+  <input type="radio" name="season" value="winter" ng-model='auth.whichSeason'>Winter
+</div>
+
+ <button type="submit" class="btn btn-default" ng-click='auth.season()'>Next Questions</button>
+ </div>
+</form>
+
+<!-- Style -->
+
+<form class="login-modal" ng-show='auth.question2'>
+  <h1 class='form-title'>User Questions</h1>
+  <div class="form-group">
+
+<div class="form-group">
+  <label for="Name">Wedding Style</label><br>
+  <input type="radio" name="style" value="classic" ng-model='auth.whichStyle'>Classic
+  <input type="radio" name="style" value="elegant" ng-model='auth.whichStyle'>Elegant
+  <input type="radio" name="style" value="modern" ng-model='auth.whichStyle'>Modern
+  <input type="radio" name="style" value="rustic" ng-model='auth.whichStyle'>Rustic
+  <input type="radio" name="style" value="fairytail" ng-model='auth.whichStyle'>Fairytail
+</div>
+
+ <button type="submit" class="btn btn-default" ng-click='auth.style()'>Next Questions</button>
+ </div>
+</form>
+
+<!-- Flowers -->
+
+<form class="login-modal" ng-show='auth.question3'>
+  <h1 class='form-title'>User Questions</h1>
+  <div class="form-group">
+
+<div class="form-group">
+  <label for="Name" ng-model='auth.flowers'>Pick up to 3 flowers </label><br>
+  <input type="checkbox" name="rose" value="rose" ng-model='auth.whichFlower1'>Rose
+  <input type="checkbox" name="flowers" value="lilly" ng-model='auth.whichFlower2'>Lilly
+  <input type="checkbox" name="flowers" value="hydrangea" ng-model='auth.whichFlower3'>Hydrangea
+  <input type="checkbox" name="flowers" value="peony" ng-model='auth.whichFlower4'>Peony
+  <input type="checkbox" name="flowers" value="carnation" ng-model='auth.whichFlower5'>Carnation
+  <input type="checkbox" name="flowers" value="orchid" ng-model='auth.whichFlower6'>Orchid
+</div>
+
+<h1>{{auth.whichFlower}}</h1>
+<h1>{{auth.flowers}}</h1>
+
+ <button type="submit" class="btn btn-default" ng-click='auth.flower()'>Next Questions</button>
+ </div>
+</form>
+
+<!-- Colors -->
+
+<form class="login-modal" ng-show='auth.question4'>
+  <h1 class='form-title'>User Questions</h1>
+  <div class="form-group">
+
+<div class="form-group">
+  <label for="Name">Wedding Colors</label><br>
+  Color 1<input type="color" name="color" ng-model='auth.color1'><br>
+  Color 2<input type="color" name="color" ng-model='auth.color2'><br>
+  Color 3<input type="color" name="color" ng-model='auth.color3'>
+  </div>
+
+ <button type="submit" class="btn btn-default" ng-click='auth.color()'>Submit</button>
+ </div>
+</form>
+
+
+<!--image rotator-->
+<div>
+    <h1>TABLES</h1>
+    <h1>{{dash.tableCount}}</h1>
+    <div class="container">
+        <h1 class="left" ng-click='dash.subtractX("tables")'><</h1>
+        <div class="right" ng-click='dash.addX("tables")'><h1 class="rightArrow">></h1></div>
+        <img src='images/table/{{dash.designs[dash.tableCount].image}}' class="imageSlider">
+    </div>
+</div>
+
+<div>
+    <h1>BOUQUETS</h1>
+    <div class="container">
+        <h1 class="left" ng-click='dash.subtractX("bouquets")'><</h1>
+        <h1 class="right" ng-click='dash.addX("bouquets")'>></h1>
+        <img src='images/bouquets/{{dash.bouquets[dash.bouquetCount].image}}' class="imageSlider">
+    </div>
+</div>
+
+<div>
+    <h1>CORSAGES</h1>
+    <div class="container">
+        <h1 class="left" ng-click='dash.subtractX("corsage")'><</h1>
+        <h1 class="right" ng-click='dash.addX("corsage")'>></h1>
+        <img src='images/corsage/{{dash.corsage[dash.corsageCount].image}}' class="imageSlider">
+    </div>
+</div>
+
+<div>
+    <h1>TABLEFLOWERS</h1>
+    <div class="container">
+        <h1 class="left" ng-click='dash.subtractX("tableFlowers")'><</h1>
+        <h1 class="right" ng-click='dash.addX("tableFlowers")'>></h1>
+        <img src='images/tableFlowers/{{dash.tableFlowers[dash.tableFlowersCount].image}}' class="imageSlider">
+    </div>
+</div>
+
+<!--<div class='column'>
+    <div class='row'>
+        <div ng-repeat='designs in dash.designs | filter:"table"'>
+            
+            <img src="images/{{designs.section}}/{{designs.image}}" alt="" class="designImages col-sm-3">
+        </div>
+    </div>
+</div>-->
+
+<!--<h1>BOUQUETS</h1>
+<div class='column'>
+    <div class='row'>
+        <div ng-repeat='designs in dash.designs | filter:"bouquets"'>
+            
+            <img src="images/{{designs.section}}/{{designs.image}}" alt="" class="designImages col-sm-3">
+        </div>
+    </div>
+</div>
+
+<h1>CORSAGE</h1>
+<div class='column'>
+    <div class='row'>
+        <div ng-repeat='designs in dash.designs | filter:"corsage"'>
+            
+            <img src="images/{{designs.section}}/{{designs.image}}" alt="" class="designImages col-sm-3">
+        </div>
+    </div>
+</div>
+
+<h1>TABLEFLOWERS</h1>
+<div class='column'>
+    <div class='row'>
+        <div ng-repeat='designs in dash.designs | filter:"tableFlowers"'>
+           
+            <img src="images/{{designs.section}}/{{designs.image}}" alt="" class="designImages col-sm-3">
+        </div>
+    </div>
+</div>-->

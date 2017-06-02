@@ -1,8 +1,23 @@
-,section,season,style,flower,colors,image
-,tables,summer,classic,na,"white, pink","images/table/creampinklinens.jpg
+section,season,style,flower,colors,image
+table,summer,classic,na,"white, pink","creampinklinens.jpg
 "
-,tables,spring,fairytale,na,"teal, brown, white",images/table/linens10-web.jpg
-,tables,spring,fairytale,na,teal,images/table/los-angeles-wedding-linens.jpg
-,tables,fall,elegant,na,"gold, white, pink",images/table/southern-wedding-monogrammed-linens.jpg
-,tables,winter,classic,na,"gold, brown, white",images/table/timthumb.jpeg
-,tables,summer,modern,na,"yellow, beige, white",images/table/Wedding-linens-where-to-buy.jpg
+table,spring,fairytale,na,"teal, brown, white",linens10-web.jpg
+table,spring,fairytale,na,teal,los-angeles-wedding-linens.jpg
+table,fall,elegant,na,"gold, white, pink",southern-wedding-monogrammed-linens.jpg
+table,winter,classic,na,"gold, brown, white",timthumb.jpeg
+table,summer,modern,na,"yellow, beige, white",Wedding-linens-where-to-buy.jpg
+bouquets,summer,elegant,rose,"red, white",3-Rose-Bouquet-Red-Freesia-LG.jpg
+bouquets,spring,classic,lilly,"pink, white, blue",3acade52eb0a5be058d74a72752c4687.jpg
+bouquets,winter,modern,Carnation,"white, pink",5af42a5d12bff8a8997a5e87c33bd748.jpg
+bouquets,fall,elegant,Orchid,"green, with, pink",reynolds-lively-wd109335-bouquet-0156_sq.jpg
+bouquets,summer,fairytale,Hydrangea,"orange, yellow, purple",SD_FD_F44A_00327053_NC_X_EC_0.jpeg
+corsage,winter,classic,lilly,white,81.365.jpg
+corsage,spring,fairytale,Hydrangea,orange,1352_5095_399x467.jpg
+corsage,fall,fairytale,Carnation,purple,Blush-Beauty-Corsage.jpg
+corsage,winter,modern,rose,"pink, purple, white",c4336e460ca9c85a1c0c1add9466c4c2.jpg
+corsage,summer,elegant,orchid,"pink, green",W8-3453-Pure-Grace-Corsage.jpg
+tableFlowers,summer,classic,lilly,"pink, white, green",6247edc21b2f664a8b5fd7bf6ad688f6.jpg
+tableFlowers,fall,modern,orchid,"green, white, yellow",Coolest-Table-Flower-Arrangement-Images-31-Upon-Inspirational-Home-Designing-with-Table-Flower-Arrangement-Images.jpg
+tableFlowers,summer,fairytale,Carnation,"yellow, green, orange",f82d4243e2a69e731fe6d91bc36a4037.jpg
+tableFlowers,spring,fairytale,rose,"pink, green",flowers7.jpg
+tableFlowers,winter,elegant,rose,"red, pink, green",red-poppy-flower-table-centerpieces-8.jpg

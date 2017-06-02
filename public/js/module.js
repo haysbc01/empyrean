@@ -9,7 +9,9 @@ function Config($routeProvider){
     .when('/', {
       templateUrl : '/html/home.html',
       controller : 'authController',
-      controllerAs : 'auth'
+      controllerAs : 'auth',
+      controller : 'dashController',
+      controllerAs : 'dash'
     })
     .when('/auth', {
       templateUrl : '/html/auth.html',
