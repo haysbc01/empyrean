@@ -4,7 +4,7 @@
     <h1>Design</h1>
     <h1>Styles</h1>
     </div>
-    <h4>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</h4>
+    <h4 class="bodyText">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</h4>
     
 <div class="center">
     <button type="button" name="button" ng-click='auth.loginModal =! auth.loginModal; background =! background' class='login'>login</button> 
@@ -12,6 +12,51 @@
     <button type="button" name="button" ng-click='auth.signUp =! auth.signUp; background =! background' class='login'>sign up</button> 
     <!--<a href="#!/auth"><button type="button" name="button">login</button></a>-->
 </div>
+
+
+<!--image rotator-->
+<div class="column imageRotator">
+<!--<div class="row">-->
+    <div class="container col-sm-2">
+        <h4>TABLES</h4>
+        <h1 class="left" ng-click='dash.subtractX("tables")'><</h1>
+        <h1 class="right" ng-click='dash.addX("tables")'>></h1>
+        <img src='images/table/{{dash.designs[dash.tableCount].image}}' class="imageSlider">
+    </div>
+<!--</div>-->
+
+<!--<div class="row">-->
+    <div class="container col-sm-2">
+        <h4>BOUQUETS</h4>
+        <h1 class="left" ng-click='dash.subtractX("bouquets")'><</h1>
+        <h1 class="right" ng-click='dash.addX("bouquets")'>></h1>
+        <img src='images/bouquets/{{dash.bouquets[dash.bouquetCount].image}}' class="imageSlider">
+    </div>
+<!--</div>-->
+
+<!--<div class="row">-->
+    <div class="container col-sm-2">
+        <h4>CORSAGES</h4>
+        <h1 class="left" ng-click='dash.subtractX("corsage")'><</h1>
+        <h1 class="right" ng-click='dash.addX("corsage")'>></h1>
+        <img src='images/corsage/{{dash.corsage[dash.corsageCount].image}}' class="imageSlider">
+    </div>
+<!--</div>-->
+
+<!--<div class="row">-->
+    <div class="container col-sm-2">
+        <h4>TABLEFLOWERS</h4>
+        <h1 class="left" ng-click='dash.subtractX("tableFlowers")'><</h1>
+        <h1 class="right" ng-click='dash.addX("tableFlowers")'>></h1>
+        <img src='images/tableFlowers/{{dash.tableFlowers[dash.tableFlowersCount].image}}' class="imageSlider">
+    </div>
+<!--</div>-->
+
+</div>
+
+
+<!--login modals-->
+
 <div class='background' ng-show='background'></div>
 
     <form class="login-modal" ng-show='auth.loginModal'>
@@ -150,81 +195,3 @@
  <button type="submit" class="btn btn-default" ng-click='auth.color()'>Submit</button>
  </div>
 </form>
-
-
-<!--image rotator-->
-<div>
-    <h1>TABLES</h1>
-    <h1>{{dash.tableCount}}</h1>
-    <div class="container">
-        <h1 class="left" ng-click='dash.subtractX("tables")'><</h1>
-        <div class="right" ng-click='dash.addX("tables")'><h1 class="rightArrow">></h1></div>
-        <img src='images/table/{{dash.designs[dash.tableCount].image}}' class="imageSlider">
-    </div>
-</div>
-
-<div>
-    <h1>BOUQUETS</h1>
-    <div class="container">
-        <h1 class="left" ng-click='dash.subtractX("bouquets")'><</h1>
-        <h1 class="right" ng-click='dash.addX("bouquets")'>></h1>
-        <img src='images/bouquets/{{dash.bouquets[dash.bouquetCount].image}}' class="imageSlider">
-    </div>
-</div>
-
-<div>
-    <h1>CORSAGES</h1>
-    <div class="container">
-        <h1 class="left" ng-click='dash.subtractX("corsage")'><</h1>
-        <h1 class="right" ng-click='dash.addX("corsage")'>></h1>
-        <img src='images/corsage/{{dash.corsage[dash.corsageCount].image}}' class="imageSlider">
-    </div>
-</div>
-
-<div>
-    <h1>TABLEFLOWERS</h1>
-    <div class="container">
-        <h1 class="left" ng-click='dash.subtractX("tableFlowers")'><</h1>
-        <h1 class="right" ng-click='dash.addX("tableFlowers")'>></h1>
-        <img src='images/tableFlowers/{{dash.tableFlowers[dash.tableFlowersCount].image}}' class="imageSlider">
-    </div>
-</div>
-
-<!--<div class='column'>
-    <div class='row'>
-        <div ng-repeat='designs in dash.designs | filter:"table"'>
-            
-            <img src="images/{{designs.section}}/{{designs.image}}" alt="" class="designImages col-sm-3">
-        </div>
-    </div>
-</div>-->
-
-<!--<h1>BOUQUETS</h1>
-<div class='column'>
-    <div class='row'>
-        <div ng-repeat='designs in dash.designs | filter:"bouquets"'>
-            
-            <img src="images/{{designs.section}}/{{designs.image}}" alt="" class="designImages col-sm-3">
-        </div>
-    </div>
-</div>
-
-<h1>CORSAGE</h1>
-<div class='column'>
-    <div class='row'>
-        <div ng-repeat='designs in dash.designs | filter:"corsage"'>
-            
-            <img src="images/{{designs.section}}/{{designs.image}}" alt="" class="designImages col-sm-3">
-        </div>
-    </div>
-</div>
-
-<h1>TABLEFLOWERS</h1>
-<div class='column'>
-    <div class='row'>
-        <div ng-repeat='designs in dash.designs | filter:"tableFlowers"'>
-           
-            <img src="images/{{designs.section}}/{{designs.image}}" alt="" class="designImages col-sm-3">
-        </div>
-    </div>
-</div>-->

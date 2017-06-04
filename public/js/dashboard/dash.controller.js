@@ -71,23 +71,25 @@ angular.module('design')
     };
 
     dash.subtractX = function(arg){
+      console.log(dash.corsage.length, dash.corsageCount)
       if(arg === 'tables'){
-        if(dash.tableCount<dash.tables.length-1 && dash.tableCount>=0){
+        if(dash.tableCount<dash.tables.length && dash.tableCount > 0){
           dash.tableCount -= 1;
-          } else dash.tableCount = dash.tables.length-1;
+        } else dash.tableCount = dash.tables.length-1;
+        
       } 
       else if(arg === 'corsage'){
-        if(dash.corsageCount<dash.corsage.length-1){
+        if(dash.corsageCount<dash.corsage.length && dash.corsageCount > 0){
           dash.corsageCount -= 1;
           } else dash.corsageCount = dash.corsage.length-1;
       } 
       else if(arg === 'bouquets'){
-        if(dash.bouquetCount<dash.bouquets.length-1){
+        if(dash.bouquetCount<dash.bouquets.length && dash.bouquetCount > 0){
           dash.bouquetCount -= 1;
           } else dash.bouquetCount = dash.bouquets.length-1;
       } 
       else if(arg === 'tableFlowers'){
-        if(dash.tableFlowersCount<dash.tableFlowers.length-1){
+        if(dash.tableFlowersCount<dash.tableFlowers.length && dash.tableFlowersCount > 0){
           dash.tableFlowersCount -= 1;
           } else dash.tableFlowersCount = dash.tableFlowers.length-1;
       }
